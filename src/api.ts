@@ -3,7 +3,10 @@ import { toApiResponse } from "./utils/api-utils";
 import { Transaction, ApiResponse, OverviewData, Balance } from "./state/types";
 
 if (API_BASE == "http://localhost:3000") {
-  console.log("ERR: .env not detected | Running On LOCAL ENV");
+  console.log(
+    "ERR: .env not detected | Running On LOCAL ENV",
+    import.meta.env.VITE_API_BASE
+  );
 }
 
 // request.ts
