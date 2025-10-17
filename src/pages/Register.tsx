@@ -17,7 +17,7 @@ export default function Register() {
 
     try {
       const res = await register(email, password);
-      if (res.status === 201 || res.ok) {
+      if (res.status >= 200 || (res.ok && res.status <= 300)) {
         setSuccess(true);
         navigate("/login");
       } else {
