@@ -26,7 +26,6 @@ import {
 import Transactions from "./pages/Transactions";
 import { Transaction } from "./state/types";
 import Balances from "./pages/Balance";
-import PWABadge from "./PWABadge";
 
 function Header() {
   const { user, logout } = useAuth();
@@ -240,7 +239,6 @@ function App() {
 
   return (
     <>
-      <PWABadge />
       <AuthProvider>
         <BrowserRouter>
           <Header />
