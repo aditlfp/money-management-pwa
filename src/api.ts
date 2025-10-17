@@ -2,6 +2,10 @@ const API_BASE = import.meta.env.VITE_API_BASE || "http://localhost:3000";
 import { toApiResponse } from "./utils/api-utils";
 import { Transaction, ApiResponse, OverviewData, Balance } from "./state/types";
 
+if (API_BASE == "http://localhost:3000") {
+  console.log("ERR: .env not detected | Running On LOCAL ENV");
+}
+
 // request.ts
 async function request(path: string, opts: any) {
   const token = localStorage.getItem("token");
