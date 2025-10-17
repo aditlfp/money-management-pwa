@@ -21,7 +21,8 @@ export default function Register() {
         setSuccess(true);
         navigate("/login");
       } else {
-        setError(`Registration failed ${res.body}`);
+        console.log(res.body);
+        setError(`Registration failed`);
       }
     } catch (err) {
       setError("An error occurred during registration");
