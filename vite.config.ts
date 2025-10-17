@@ -22,10 +22,6 @@ export default defineConfig({
         short_name: "mmy",
         description: "none",
         theme_color: "#ffffff",
-        background_color: "#ffffff",
-        display: "standalone",
-        start_url: "/",
-        scope: "/",
       },
 
       workbox: {
@@ -35,7 +31,7 @@ export default defineConfig({
       },
 
       devOptions: {
-        enabled: false,
+        enabled: true,
         navigateFallback: "index.html",
         suppressWarnings: true,
         type: "module",
