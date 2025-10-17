@@ -156,7 +156,7 @@ const Overview = () => {
         {/* Main Balance Card */}
         <div
           className={`bg-gradient-to-br rounded-2xl p-6 sm:p-8 mb-6 text-white shadow-lg ${
-            data.currentBalance < 0
+            data.currentBalance <= 0
               ? "from-red-500 to-red-600"
               : "from-blue-500 to-blue-600"
           }`}
