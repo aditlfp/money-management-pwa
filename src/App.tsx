@@ -26,6 +26,7 @@ import {
 import Transactions from "./pages/Transactions";
 import { Transaction } from "./state/types";
 import Balances from "./pages/Balance";
+import PWABadge from "./PWABadge";
 
 function Header() {
   const { user, logout } = useAuth();
@@ -61,7 +62,7 @@ function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          {user ? (
+          {user && (
             <div className="hidden md:flex items-center gap-1">
               {navLinks.map(({ path, label, icon: Icon }) => (
                 <Link
@@ -96,21 +97,6 @@ function Header() {
                   <span>Logout</span>
                 </button>
               </div>
-            </div>
-          ) : (
-            <div className="hidden md:flex items-center gap-2">
-              <Link
-                to="/login"
-                className="px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg transition"
-              >
-                Login
-              </Link>
-              <Link
-                to="/register"
-                className="px-4 py-2 bg-blue-600 text-white hover:bg-blue-700 rounded-lg transition font-medium"
-              >
-                Register
-              </Link>
             </div>
           )}
 
@@ -253,39 +239,42 @@ function App() {
   }, []);
 
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <RequireAuth>
-                <Overview />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/transactions"
-            element={
-              <RequireAuth>
-                <Transactions />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/balance"
-            element={
-              <RequireAuth>
-                <Balances />
-              </RequireAuth>
-            }
-          />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </BrowserRouter>
-    </AuthProvider>
+    <>
+      <PWABadge />
+      <AuthProvider>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <RequireAuth>
+                  <Overview />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/transactions"
+              element={
+                <RequireAuth>
+                  <Transactions />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="/balance"
+              element={
+                <RequireAuth>
+                  <Balances />
+                </RequireAuth>
+              }
+            />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+          </Routes>
+        </BrowserRouter>
+      </AuthProvider>
+    </>
   );
 }
 
