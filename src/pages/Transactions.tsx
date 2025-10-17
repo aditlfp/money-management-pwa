@@ -3,7 +3,6 @@ import {
   Plus,
   Trash2,
   Search,
-  Filter,
   TrendingUp,
   TrendingDown,
   Calendar,

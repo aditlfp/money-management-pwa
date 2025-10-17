@@ -25,7 +25,6 @@ import {
 } from "lucide-react";
 import Transactions from "./pages/Transactions";
 import { Transaction } from "./state/types";
-import Balance from "./pages/Balance";
 import Balances from "./pages/Balance";
 
 function Header() {
