@@ -340,7 +340,7 @@ function Balances() {
                     Amount <span className="text-red-500">*</span>
                   </label>
                   <div className="relative">
-                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">
+                    <span className="absolute required left-3 top-1/2 transform -translate-y-1/2 text-gray-500 font-medium">
                       Rp
                     </span>
                     <input

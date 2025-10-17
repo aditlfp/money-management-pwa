@@ -417,7 +417,7 @@ function Transactions() {
                     Amount
                   </label>
                   <div className="relative">
-                    <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
+                    <span className="absolute required left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
                       Rp
                     </span>
                     <input
@@ -440,12 +440,13 @@ function Transactions() {
 
                 {/* Category */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block required text-sm font-medium text-gray-700 mb-2">
                     Category
                   </label>
                   <input
                     type="text"
                     required
+                    readOnly
                     value={formData.type}
                     onChange={(e) =>
                       setFormData({ ...formData, type: e.target.value })
